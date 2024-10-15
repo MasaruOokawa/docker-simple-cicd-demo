@@ -5,8 +5,8 @@ CMD ["bash"]
 FROM base AS test-and-build
 COPY . /workspace
 WORKDIR /workspace
-RUN ./gradle build
-# RUN chmod +x ./gradlew && ./gradlew build
+# RUN ./gradle build
+RUN chmod +x ./gradlew && ./gradlew build
 
 # Hostind in nginx
 FROM openjdk:17 AS production
